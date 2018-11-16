@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 100vh;
+  background: url(https://images.pexels.com/photos/305821/pexels-photo-305821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  position: relative;
+  height: 70px;
+  line-height: 70px;
+  background-color: rgba(0,0,0, .7);
+}
+
+.brand {
+  float: left;
+  margin: 0 0 0 40px;
+}
+
+.brand a {
+  color: #fff;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+
+.links {
+  float: right;
+  margin-right: 6px;
+}
+
+.links li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.links li a {
+  display: block;
+  padding: 0 6px;
+  transition: all .2s ease-out;
+  color: #fff;
+  position: relative;
+}
+
+.links li a::before {
+  transition: width .3s ease;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  top: 0;
+  height: 4px;
+  background-color: rgba(0, 77, 0, .4);
+  left: 0;
+}
+
+.links li a:hover, .links li a:focus, .links li a:active {
+  background-color: #c1c1c1;
+}
+
+.links li a:hover::before, .links li a:focus::before , .links li a:active::before {
+  width: 100%;
+}
+
+#bars {
+  float: right;
+  margin-right: 20px;
+  font-size: 26px;
+  cursor: pointer;
+  display: none;
+  color: #fff;
+}
+
+#toggle {
+  display: none;
+}
+
+.content {
+  text-align: center;
+  margin-top: 50%;
+}
+
+.content h3 {
+  font-size: 42px;
+}
+
+.content p {
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .links {
+    display: none;
+  }
+
+  #bars {
+    display: block;
+  }
+  
+  #toggle:hover::before {
+    width: 0;
+  }
+  
+  #toggle:checked + .links {
+    top: 70px;
+    position: absolute;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0, .6);
+  }
+  
+  #toggle:checked + .links li {
+    margin: 0;
+    display: block;
+  }
+  
+  #toggle:checked + .links li a:hover::before, #toggle:checked + .links li a:focus::before, #toggle:checked + .links li a:active::before {
+    width: 0;
+  }
+  
+}
